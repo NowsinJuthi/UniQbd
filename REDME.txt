@@ -1,0 +1,161 @@
+/my-project
+  /client        ← React frontend
+  /server        ← Express backend
+
+cd client
+npm create vite@latest 
+
+cd ../server
+npm init -y
+npm i express mongoose cors helmet hpp xss-clean express-rate-limit dotenv express-mongo-sanitize cookie-parser
+npm i -D nodemon
+mkdir -p src/{routes,controllers,services,models,middlewars,utils,config,}
+
+model->controller->service->model 
+
+"dev": "nodemon index.js",
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+green: { DEFAULT: "#11ae68" },
+website: { DEFAULT: "#031b23" },
+website1: { DEFAULT: "#02161c" },
+blackColor3: { DEFAULT: "#01222c"},
+cart: { DEFAULT: "#031a21" },
+websitefont: { DEFAULT: "rgba(255, 255, 255, .6)" },
+navbar: { DEFAULT: "#d1fbe9" },
+
+
+
+https://www.npmjs.com/package/react-slick
+https://www.npmjs.com/package/react-image-gallery
+https://www.npmjs.com/package/swiper
+https://www.npmjs.com/package/react-input-range
+https://swiperjs.com/
+https://www.npmjs.com/package/react-range
+
+// nextjs-toploader
+https://www.npmjs.com/package/nextjs-toploader
+
+https://www.npmjs.com/package/react-fast-marquee
+https://photoswipe.com/react-image-gallery/
+https://www.npmjs.com/package/react-image-lightbox
+
+https://www.npmjs.com/package/react-modal-video
+https://www.npmjs.com/package/react-photo-gallery
+
+
+https://www.npmjs.com/package/react-tooltip
+https://atomiks.github.io/tippyjs/
+
+
+https://recharts.org/en-US
+
+https://animate.style/
+https://www.npmjs.com/package/react-reveal
+https://www.npmjs.com/package/react-animate-on-scroll
+https://animejs.com/
+
+
+https://ianlunn.github.io/Hover/
+
+
+https://www.npmjs.com/package/react-toastify
+https://www.npmjs.com/package/react-hot-toast
+https://sweetalert2.github.io/#examples
+https://sweetalert.js.org/guides/
+https://www.npmjs.com/package/cogo-toast
+https://notistack.com/features/basic
+https://www.npmjs.com/package/@react-google-maps/api
+
+
+https://www.npmjs.com/package/rc-drawer
+
+
+https://www.npmjs.com/package/react-scroll-to-top
+
+
+https://react-icons.github.io/react-icons/
+
+
+https://www.npmjs.com/package/react-spinners
+https://www.npmjs.com/package/spinners-react
+https://www.npmjs.com/package/react-loader-spinner
+
+
+https://www.npmjs.com/package/react-code-input
+https://www.npmjs.com/package/react-currency-format
+
+
+https://www.npmjs.com/package/react-countup
+
+
+https://www.npmjs.com/package/html-react-parser
+https://www.npmjs.com/package/react-html-parser
+
+
+https://www.npmjs.com/package/react-share
+
+
+https://www.emailjs.com/docs/examples/reactjs/
+
+
+https://www.npmjs.com/package/react-circular-progressbar
+https://www.npmjs.com/package/@ramonak/react-progress-bar
+https://www.npmjs.com/package/react-customizable-progressbar
+
+
+https://www.npmjs.com/package/quill
+https://www.npmjs.com/package/react-quill
+
+
+https://www.npmjs.com/package/react-tabs
+
+
+https://www.npmjs.com/package/react-moment
+
+
+https://www.npmjs.com/package/react-typed
+
+https://www.npmjs.com/package/yup
+
+
+https://www.npmjs.com/package/rc-pagination
+https://www.npmjs.com/package/react-paginate
+
+
+https://www.npmjs.com/package/react-datepicker
+https://www.npmjs.com/package/date-fns
+
+
+https://www.npmjs.com/package/react-select
+https://www.npmjs.com/package/rc-select
+
+
+https://www.npmjs.com/package/react-accessible-accordion
+
+https://www.npmjs.com/package/react-image-magnify
+
+https://www.npmjs.com/package/react-modal
+
+
+https://www.npmjs.com/package/react-table
+https://www.npmjs.com/package/rc-table
+
+
+https://www.npmjs.com/package/react-rating
+
+
+
+--color-gradient: radial-gradient(at 50% 75%,
+            rgba(37, 82, 79, 0.5),
+            rgba(6, 48, 62, 0.8),
+            rgba(17, 174, 104, 0.4));
+}
+
+.bg-gradient {
+    background: var(--color-gradient);
+}
+
+bg-radial-[at_50%_75%] 
+       from-[#25524ffb]/50 via-bgtransparent/80 to-website/40

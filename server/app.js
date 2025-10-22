@@ -16,20 +16,19 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 100,
+    windowMs: 1 * 60 * 1000,
+    max: 1000,
 });
 
-// app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
 app.use(limiter);
 
 app.use("/api/v1", router);
 
-// app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
-// app.get(/.*/, function (req, res) {
-//     res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
-// });
+// 🧠 Serve uploaded images as static files
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+
 
 export default app;

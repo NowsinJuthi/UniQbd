@@ -1,18 +1,29 @@
 import { getUserIdFromToken } from "../config/jwtProvider.js";
-import { getdUserById } from "../services/userService.js";
+import { getUserById } from "../services/userService.js";
 
-export const authenticate = async (req,res,next) => {
+export const authenticate = async (req, res, next) => {
   try {
-    const token = req.headers.authorization?.split(" ")(1);
-    if (!token) {
-      return req.status(404).send({ error: "Token not found" });
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+      return res.status(401).json({ success: false, message: "Authorization header missing" });
     }
+
+    const token = authHeader.split(" ")[1];
+    if (!token) {
+      return res.status(401).json({ success: false, message: "Token not found" });
+    }
+
+    // ✅ get user ID from token
     const userId = getUserIdFromToken(token);
-    const user = getdUserById(userId);
+    const user = await getUserById(userId);
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
 
     req.user = user;
+    next(); // ✅ শুধু একবার কল করো
   } catch (error) {
-    return resizeBy.status(500).send({ error: error.message });
+    return res.status(401).json({ success: false, message: "Invalid or expired token" });
   }
-  next()
 };

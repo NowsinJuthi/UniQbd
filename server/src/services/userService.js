@@ -25,7 +25,7 @@ export const createUser = async (userData) => {
   }
 };
 
-export const getdUserById = async (userId) => {
+export const getUserById = async (userId) => {
   try {
     const user = await userModel.findById(userId);
     if (!user) {

@@ -1,64 +1,64 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-const model = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true
+const productSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true
+    },
+    slug: {
+      type: String,
+      required: true
     },
     description: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     price: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true
     },
-    discountPrice: {
-        type: Number,
-    },
-    discountPersent: {
-        type: Number,
+    category: {
+      type: mongoose.Schema.Types.ObjectId, ref: "Category",
+      required: true
     },
     quantity: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true
     },
-    package: {
-        name: {
-            type: String
-        },
-        quantity:{
-            type: String
-        }
+    photo: { type: String },
+    bgphoto: { type: String },
+    discountPrice: {
+      type: Number
     },
-    imgUrl: {
-        type: String
+    isActive: {
+      type: Boolean,
+      default: true,
     },
-    rating: [
-        {
-            type: mongoose. Schema.Types.ObjectId,
-            ref:"ratings"
-        }
+    packages: [
+      {
+        name: String,
+        regularPrice: Number,
+        discountPrice: Number,
+        shortDesc: String,
+        longDesc: String,
+      },
     ],
-    reviews: [
-        {
-            type: mongoose. Schema.Types.ObjectId,
-            ref:"reviews"
-        }
-    ],
-    numRatings:{
-        type: Number,
-        default: 0
+    stockStatus: {
+      type: String,
+      enum: ["In Stock", "Out of Stock"],
+      default: "In Stock",
     },
-    category:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref:"categories"
+    averageRating: {
+      type: Number,
+      default: 0,
     },
-    createdAt:{
-        type: Date,
-        default: Date.now()
-    }
-})
+  },
 
-const ProductModel = mongoose.model('products', model)
-export default ProductModel
+
+  { timestamps: true }
+);
+
+const productModel =
+  mongoose.models.Product || mongoose.model("Product", productSchema);
+export default productModel;

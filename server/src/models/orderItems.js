@@ -23,7 +23,7 @@ const model = new mongoose.Schema({
         ref:"users",
         required: true,
     },
-    
+     
 })
 
 const OrderItem = mongoose.model('orderItems', model)

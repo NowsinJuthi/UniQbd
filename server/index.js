@@ -9,7 +9,7 @@ mongoose
     .then(() => {
         console.log("Database connected")
 
-        app.listen(PORT, () => {
+         app.listen(PORT, () => {
             console.log(`server running ${PORT}`)
         })
     })

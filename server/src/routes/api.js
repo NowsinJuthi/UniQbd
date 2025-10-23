@@ -63,7 +63,6 @@ router.get("/admin", authenticate, isAdmin, (req, res) => {
 router.post("/forgot-password", forgotPasswordController);
 
 
-
 //CREATE-CATEGORY
 router.post(
   "/create-category",

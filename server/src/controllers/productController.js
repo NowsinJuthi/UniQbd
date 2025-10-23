@@ -265,12 +265,16 @@ export const productListController = async (req, res) => {
 export const searchProductController = async (req, res) => {
   try {
     const { keyword } = req.params;
+    console.log("Search keyword:", keyword);
+
     const results = await productModel
       .find({
         $or: [
           { name: { $regex: keyword, $options: "i" } },
           { description: { $regex: keyword, $options: "i" } },
-          { packages: { $regex: keyword, $options: "i" } },
+          { "packages.name": { $regex: keyword, $options: "i" } },
+          { "packages.shortDesc": { $regex: keyword, $options: "i" } },
+          { "packages.longDesc": { $regex: keyword, $options: "i" } },
         ],
       })
       .select("-photo");
@@ -288,6 +292,7 @@ export const searchProductController = async (req, res) => {
     });
   }
 };
+
 
 
 
